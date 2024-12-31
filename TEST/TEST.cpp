@@ -1,16 +1,19 @@
-#include<stdio.h>
-struct n {
-    int x;
-    char c;
-};
-void func(struct n b)
+#include<iostream>
+
+using namespace std;
+
+double jiecheng(double n)
 {
-    b.x = 20;
-    b.c= 'y';
+    if(n<2)
+    return 1;
+    else
+    return jiecheng(n-1)*n;
 }
-main()
+
+int main()
 {
-    struct n a = {10, 'x'};
-    func(a);
-    printf ("%d,%c", a.x,a.c);
+    double n;
+    cin>>n;
+    cout<<jiecheng(n);
+    return 0;
 }
